@@ -3,9 +3,11 @@ services:
   - name: web
     github:
       repo: vip2singh/kids-site2
-      branch: main
+      branch: dev
       deploy_on_push: true
       dir: "web"
+      type: static_site
+      source_dir: .
     static_site:
       build_command: ""
       output_dir: "web"
@@ -14,4 +16,4 @@ services:
     instance_count: 1
     instance_size_slug: "basic-xxs"
     run_command: null
-    envs: []
+    envs: [dev]
